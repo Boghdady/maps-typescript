@@ -100437,6 +100437,10 @@ function () {
     };
   }
 
+  User.prototype.markerContent = function () {
+    return "User Name is : " + this.name;
+  };
+
   return User;
 }();
 
@@ -100468,6 +100472,10 @@ function () {
       lng: parseFloat(faker_1.default.address.longitude())
     };
   }
+
+  Company.prototype.markerContent = function () {
+    return "Company Name: " + this.companyName;
+  };
 
   return Company;
 }();
@@ -100506,7 +100514,7 @@ function () {
     }); // Open window when click on the marker
 
     var infoWindo = new google.maps.InfoWindow({
-      content: 'Hi There!'
+      content: mappable.markerContent()
     });
     marker.addListener('click', function () {
       infoWindo.open(_this.googleMap, marker);

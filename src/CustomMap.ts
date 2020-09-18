@@ -3,6 +3,7 @@ interface Mappable {
 		lat: number;
 		lng: number;
 	};
+	markerContent(): string;
 }
 
 export class CustomMap {
@@ -30,7 +31,8 @@ export class CustomMap {
 		});
 
 		// Open window when click on the marker
-		const infoWindo = new google.maps.InfoWindow({ content: 'Hi There!' });
+		const infoWindo = new google.maps.InfoWindow({ content: mappable.markerContent() });
+
 		marker.addListener('click', () => {
 			infoWindo.open(this.googleMap, marker);
 		});
