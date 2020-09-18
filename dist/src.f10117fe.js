@@ -100428,8 +100428,9 @@ var faker_1 = __importDefault(require("faker"));
 var User =
 /** @class */
 function () {
+  // Initialization
   function User() {
-    // Initialization
+    this.color = 'green';
     this.name = faker_1.default.name.findName();
     this.location = {
       lat: parseFloat(faker_1.default.address.latitude()),
@@ -100464,7 +100465,8 @@ var Company =
 /** @class */
 function () {
   function Company() {
-    // Initialization
+    this.color = 'red'; // Initialization
+
     this.companyName = faker_1.default.company.companyName();
     this.catchPhrase = faker_1.default.company.catchPhrase();
     this.location = {
